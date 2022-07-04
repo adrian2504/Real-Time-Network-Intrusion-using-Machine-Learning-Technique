@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>User Login</title>
+
+	<link rel="stylesheet" href="/static/css/normalize.css">
+	<link rel="stylesheet" href="/static/css/styles.css">
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/style2.css') }}">
+
+</head>
+<body style="background-color: #AAD1E2;">
+	
+	{% block content %}
+	 {# Template inserted here #}
+	{% endblock %}
+
+	<script src='/static/js/jquery.js'></script>
+	<script src='/static/js/scripts.js'></script>
+
+	<script src="{{url_for('static', filename='js/app.js')}}"></script>
+
+</body>
+</html>

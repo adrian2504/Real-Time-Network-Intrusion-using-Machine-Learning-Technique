@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+	<h1 align="center"> IDS Result   </h1>
+		<div class="card">
+			{% if hst|length < 6 %}
+
+				<p>Mac Address of this device: {{hst[1]}}</p>
+		        <p>IP Address of this device: {{hst[2]}}</p>
+		        <p>Packets found: {{hst[3]}}</p>
+		        <p>Anomaly found: {{hst[4]}}</p>
+				
+			
+			{% else %}
+				<p>Mac Address of this device: {{hst[1]}}</p>
+		        <p>IP Address of this device: {{hst[2]}}</p>
+		        <p>Packets found: {{hst[3]}}</p>
+		        <p>Anomaly found: {{hst[4]}}</p>
+		        <p>Anomalous source IP:</p>
+			        {% for x in range(13,hst|length,10) %}
+			        	<p>{{hst[x]}}</p>
+			        {% endfor %}
+			{% endif %}
+            
+		</div>
+	
+	
+
+
+</div>
+
+{% endblock %}

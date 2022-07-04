@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <div class="column">
+                <div class="card-wrapper">
+                    <div class="card">
+                        <h1 class="center">Dashboard</h1>
+                        <p class="center">Welcome {{session['user']['name']}}. You are currently logged in.</p>
+                        <div class="center">
+                            <a href="/user/signout" class="btn btn--secondary">Signout</a>
+                            <a href="/history/" class="btn btn--secondary">History</a>
+                       </div>
+    	            </div>
+                
+            
+            
+            
+            <div class="card">
+            <div class="center">
+                <h1 class="center">Selection</h1>
+                <form class="form-inline" method="post">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <select name="interfaces" method="POST" action="/selection">
+                                <div class="center">
+                                    {% for interface in interface_list %}
+                                    <option value= "{{interface}}" SELECTED>{{interface}}</option>
+                                    {% endfor %}
+                                </div>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn--secondary" id="sub_but">SUBMIT</button>
+                    </div>
+                </form>
+            </div>
+            </div>
+            </div>
+            </div>
+        </div>
+
+
+{% endblock %}

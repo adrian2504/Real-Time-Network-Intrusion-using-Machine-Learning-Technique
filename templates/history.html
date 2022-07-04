@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="flex-container">
+	<h1 align="center"> User History </h1>
+		{% for arr in hst[::-1] %}
+		  <div class="card flex-item">
+		
+		     
+		        <button class="btn btn-link" type="button">
+		          <p>Date & Time: {{arr[0]}}</p>
+		        </button>
+		    
+		    
+		      <div class="card-body">
+		        <p>Mac Address of this device: {{arr[1]}}</p>
+		        <p>IP Address of this device: {{arr[2]}}</p>
+		        <p>Packets found: {{arr[3]}}</p>
+		        <p>Anomaly found: {{arr[4]}}</p>
+		
+
+		        {% if arr|length > 5 %}
+		        <p>Anomalous source IP:</p>
+			        {% for x in range(13,arr|length,10) %}
+			        	<p>{{arr[x]}}</p>
+			        {% endfor %}
+			    {% endif %}
+		      </div>
+  			</div> 
+		{% endfor %}
+			<p align="center"> No more records found. Keep scanning</p>
+</div>
+
+{% endblock %}
